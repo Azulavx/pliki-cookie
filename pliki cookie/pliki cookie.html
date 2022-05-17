@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css cookie.css">
+</head>
+<body onload="znikaj()">
+    <div id="marenka">
+        <p>
+            Kliknij tutaj aby zaakceptować pliki cookies
+        </p>
+        <button onclick="akceptuje()">
+            Akceptuje
+        </button>
+    </div>
+    <script>
+        function akceptuje() {
+            let button = document.getElementById("marenka");
+            button.style.display = "none";
+            document.cookie = "cookieAccept:true";
+            window.alert("Dziekujemy za zaakceptowanie cookies");
+        }
+        function znikaj() {
+            if(document.cookie == "cookieAccept:true") {
+                document.getElementById("marenka").style.display = "none"
+            }
+            else
+            document.getElementById("marenka").style.visibility = "block";
+        }
+    </script>
+</body>
+</html>
